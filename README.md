@@ -6,8 +6,9 @@
 
 > "C:\…\보고양식.hwpx 양식에 맞게 이 내용으로 한글 파일 만들어줘"
 
-- **사용자 가이드(케이스별 프롬프트 예시)**: [docs/사용자가이드.md](docs/사용자가이드.md) · 한글판 `docs/사용자가이드.hwpx` · PDF `docs/사용자가이드.pdf`
-- **발표자료(15장)**: `docs/발표자료/발표자료.pptx` · PDF `docs/발표자료/발표자료.pdf` · 장별 대본 [docs/발표자료/발표대본.md](docs/발표자료/발표대본.md) (원본 `docs/발표자료/slides.json`, 고친 뒤 `npm install pptxgenjs@3.12.0` → `node tools/build_slides.js`로 다시 만들고, PDF는 PowerPoint에서 PDF로 저장)
+- **사용자 가이드(케이스별 프롬프트 예시)**: [docs/사용자가이드.md](docs/사용자가이드.md) · 슬라이드판 `docs/사용자가이드.pptx`(22장) · 한글판 `docs/사용자가이드.hwpx` · PDF `docs/사용자가이드.pdf`
+- **발표자료(15장)**: `docs/발표자료/발표자료.pptx` · PDF `docs/발표자료/발표자료.pdf` · 장별 대본 [docs/발표자료/발표대본.md](docs/발표자료/발표대본.md)
+- PPTX 다시 만들기: 원본 JSON(`docs/발표자료/slides.json`, `docs/사용자가이드.slides.json`)을 고친 뒤 `npm install pptxgenjs@3.12.0` → `node tools/build_slides.js [원본.json]`. PDF는 PowerPoint에서 PDF로 저장
 - **예시 파일**: 견본 양식 `examples/양식예시.hwpx`, 원고 [examples/sample.md](examples/sample.md), 결과 `examples/결과예시.hwpx` · `examples/결과예시.pdf`
 - 원고 문법 상세: [skills/hwpx-template/USAGE.md](skills/hwpx-template/USAGE.md)
 
@@ -56,7 +57,7 @@ skills/hwpx-template/SKILL.md     Claude가 읽는 절차
 skills/hwpx-template/USAGE.md     사용자용 문법·예시
 skills/hwpx-template/scripts/     analyze_template.py, md2hwpx.py, verify_hwp.py, hwp2hwpx.py, docx2md.py
 examples/                         견본 양식(양식예시.hwpx), 원고 예시(sample.md), 결과 예시(hwpx·pdf)
-docs/                             사용자 가이드(md·hwpx·pdf), 발표자료(pptx·pdf·대본)
+docs/                             사용자 가이드(md·pptx·hwpx·pdf), 발표자료(pptx·pdf·대본)
 tools/                            스킬 zip·발표자료 빌드 스크립트
 setup_windows.ps1                 설치 도우미
 ```
