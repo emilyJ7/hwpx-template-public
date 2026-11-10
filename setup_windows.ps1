@@ -1,7 +1,9 @@
-# hwpx-template 스킬 설치 도우미 (Windows)
+﻿# hwpx-template 스킬 설치 도우미 (Windows)
 #   1) Python 패키지 설치  2) 한글 설치 확인  3) (선택) 한글 보안 승인 모듈 등록  4) 스킬 복사(플러그인으로 설치하지 않을 때)
-# 사용: PowerShell에서  powershell -ExecutionPolicy Bypass -File .\setup_windows.ps1 [-CopySkill] [-RegisterSecurityModule]
-param([switch]$CopySkill, [switch]$RegisterSecurityModule)
+# 사용: PowerShell에서  powershell -ExecutionPolicy Bypass -File .\setup_windows.ps1 [-CopySkill] [-Agents] [-RegisterSecurityModule]
+#   -CopySkill          Claude Code용 %USERPROFILE%\.claude\skills 에 복사
+#   -CopySkill -Agents  공용 폴더 %USERPROFILE%\.agents\skills 에도 복사(Codex·Cursor·Gemini CLI·GitHub Copilot이 읽음)
+param([switch]$CopySkill, [switch]$Agents, [switch]$RegisterSecurityModule)
 $ErrorActionPreference = "Stop"
 $here = Split-Path -Parent $MyInvocation.MyCommand.Path
 
@@ -23,9 +25,13 @@ if ($RegisterSecurityModule) {
 } else { Write-Host "[3/4] 보안 모듈 등록 생략(-RegisterSecurityModule 로 등록 가능)" }
 
 if ($CopySkill) {
-  $dst = Join-Path $env:USERPROFILE ".claude\skills\hwpx-template"
-  Write-Host "[4/4] 스킬 복사 → $dst"
-  New-Item -ItemType Directory -Force -Path $dst | Out-Null
-  Copy-Item -Recurse -Force (Join-Path $here "skills\hwpx-template\*") $dst
+  $roots = @(".claude\skills")
+  if ($Agents) { $roots += ".agents\skills" }
+  foreach ($r in $roots) {
+    $dst = Join-Path $env:USERPROFILE (Join-Path $r "hwpx-template")
+    Write-Host "[4/4] 스킬 복사 → $dst"
+    New-Item -ItemType Directory -Force -Path $dst | Out-Null
+    Copy-Item -Recurse -Force (Join-Path $here "skills\hwpx-template\*") $dst
+  }
 } else { Write-Host "[4/4] 스킬 복사 생략(플러그인으로 설치했거나 -CopySkill 미지정)" }
-Write-Host "완료. Claude Code를 다시 시작하면 '이 양식으로 한글 파일 만들어줘' 요청에 스킬이 자동으로 쓰입니다."
+Write-Host "완료. AI 도구를 다시 시작(또는 새 대화)하면 '이 양식으로 한글 파일 만들어줘' 요청에 스킬이 쓰입니다."
