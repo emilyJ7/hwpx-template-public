@@ -1,0 +1,18 @@
+{
+  "name": "hwpx-template",
+  "version": "0.2.1",
+  "description": "한글(hwpx) 양식의 서식을 자동으로 읽어 같은 모양의 한글 문서를 만들고, 한글로 열어 검증하는 스킬 (보고서·개조식·법령 조문 양식 지원)",
+  "author": {
+    "name": "emilyJ7"
+  },
+  "keywords": [
+    "hwp",
+    "hwpx",
+    "한글",
+    "양식",
+    "보고서",
+    "법령"
+  ],
+  "license": "MIT",
+  "repository": "https://github.com/emilyJ7/hwpx-template-public"
+}

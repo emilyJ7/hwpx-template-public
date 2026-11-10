@@ -1,0 +1,14 @@
+__pycache__/
+*.pyc
+*.hwpx.bak
+node_modules/
+package-lock.json
+# 개인 양식·결과물이 섞여 올라가지 않도록
+*.hwp
+*.hwpx
+*.pdf
+!examples/*.hwpx
+!docs/*.hwpx
+!docs/*.pdf
+!docs/**/*.pdf
+!examples/*.pdf

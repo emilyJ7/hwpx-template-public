@@ -1,0 +1,11 @@
+{
+  "name": "hwpx-tools",
+  "owner": { "name": "emilyJ7" },
+  "plugins": [
+    {
+      "name": "hwpx-template",
+      "source": "./",
+      "description": "한글(hwpx) 양식 자동 적용·검증 스킬"
+    }
+  ]
+}
