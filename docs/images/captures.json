@@ -62,22 +62,10 @@
    "mark": "업로드 버튼, 목록의 hwpx-template"
   },
   {
-   "file": "09_skill_check.png",
-   "title": "스킬 설치 확인",
-   "shot": "한글작업 환경으로 연 새 세션 입력창에 / 를 입력해 목록이 펼쳐진 화면",
-   "mark": "목록의 「hwpx-template」"
-  },
-  {
    "file": "10_attach.png",
-   "title": "양식·원고로 요청하기",
-   "shot": "한글작업 환경 세션 입력창에 첫 문서 요청 문장을 입력한 화면",
-   "mark": "요청 문장, + 버튼"
-  },
-  {
-   "file": "11_result.png",
-   "title": "결과 확인",
-   "shot": "Claude가 완료 보고를 한 화면과, 결과\\시험보고.hwpx를 한글에서 연 화면",
-   "mark": "결과 파일 경로, 한글에서 열린 문서"
+   "title": "첫 문서 요청 문장 넣기",
+   "shot": "한글작업 환경 세션 입력창에 /anthropic-skills:hwpx-template 요청 문장을 넣은 화면",
+   "mark": "요청 문장"
   }
  ]
 }

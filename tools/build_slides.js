@@ -122,7 +122,7 @@ const R = {
     txt(s, "팁", { x: M + 0.35, y: y + 3.5, w: 0.7, h: 0.45, fontSize: 14, bold: true, color: INK, align: "center", valign: "middle" });
     txt(s, d.tip, { x: M + 0.35, y: y + 4.05, w: lw - 0.7, h: 0.85, fontSize: 14, color: MUTED });
     s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x: rx, y, w: rw, h, fill: { color: INK }, line: { color: INK }, rectRadius: 0.1 });
-    txt(s, "이렇게 요청하세요", { x: rx + 0.4, y: y + 0.35, w: rw - 0.8, h: 0.4, fontSize: 15, bold: true, color: AMBER });
+    txt(s, d.promptLabel || "이렇게 요청하세요", { x: rx + 0.4, y: y + 0.35, w: rw - 0.8, h: 0.4, fontSize: 15, bold: true, color: AMBER });
     txt(s, d.prompt, { x: rx + 0.4, y: y + 0.95, w: rw - 0.8, h: h - 1.3, fontSize: 18, color: "E6ECF4", paraSpaceAfter: 6 });
   },
   steps(s, d) {
