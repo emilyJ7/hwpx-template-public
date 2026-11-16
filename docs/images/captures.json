@@ -26,6 +26,12 @@
    "mark": "「Google로 계속하기」, 「계속」"
   },
   {
+   "file": "03b_privacy.png",
+   "title": "개인정보 설정",
+   "shot": "설정 → 개인정보보호 화면",
+   "mark": "위치 메타데이터, AI 모델 개선 돕기 끄기"
+  },
+  {
    "file": "04_code_tab.png",
    "title": "Code 탭 열기",
    "shot": "앱 왼쪽 사이드바 맨 위",
