@@ -122,7 +122,7 @@
      "items": [
       [
        "앱 설치",
-       "claude.ai/download에서 설치 파일(.exe) 받아 실행·로그인"
+       "claude.com/download에서 설치 파일(.exe) 받아 실행·로그인"
       ],
       [
        "Code 탭",
@@ -186,9 +186,9 @@
      "step": "1단계",
      "image": "images/01_download.png",
      "items": [
-      "웹 브라우저에서 claude.ai/download 접속",
-      "「Windows용 다운로드(Download for Windows)」 클릭",
-      "ARM 프로세서 PC는 ARM64용 설치 파일 선택"
+      "웹 브라우저에서 claude.com/download 접속",
+      "「Windows용 다운로드」 클릭",
+      "ARM 프로세서 PC는 「Windows(arm64)」, Microsoft Store에서 받아도 됨"
      ]
     },
     {

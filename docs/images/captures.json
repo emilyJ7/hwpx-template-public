@@ -1,7 +1,7 @@
 {
  "note": "사용자 가이드에 넣는 화면 캡처 목록. 같은 파일 이름으로 실제 캡처를 넣으면 자리 그림 대신 들어감(node tools/make_placeholders.js 는 실제 캡처를 덮어쓰지 않음)",
  "items": [
-  {"file": "01_download.png", "title": "Claude 데스크톱 앱 내려받기", "shot": "웹 브라우저에서 claude.ai/download 페이지를 연 화면", "mark": "「Windows용 다운로드(Download for Windows)」 버튼"},
+  {"file": "01_download.png", "title": "Claude 데스크톱 앱 내려받기", "shot": "웹 브라우저에서 claude.com/download 페이지를 연 화면", "mark": "「Windows용 다운로드」 버튼"},
   {"file": "02_installer.png", "title": "설치 파일 실행", "shot": "다운로드 폴더의 Claude 설치 파일(.exe)과 설치가 진행되는 창", "mark": "설치 파일 이름, 진행 막대"},
   {"file": "03_login.png", "title": "앱 첫 실행·로그인", "shot": "설치 후 처음 열린 Claude 앱의 로그인 화면", "mark": "로그인 버튼(구글 계정 또는 이메일)"},
   {"file": "04_code_tab.png", "title": "Code 탭 열기", "shot": "로그인 후 앱 첫 화면, 왼쪽 사이드바가 보이게", "mark": "사이드바 위쪽의 「Code」 탭"},
