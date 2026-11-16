@@ -50,6 +50,12 @@
    "mark": "설정, Skills, + 추가"
   },
   {
+   "file": "08b_upload.png",
+   "title": "Skill 업로드",
+   "shot": "+ 추가 → Skill 업로드 → 업로드 칸 → 열기 창에서 dist\\hwpx-template-skill 선택",
+   "mark": "Skill 업로드, 업로드 칸, hwpx-template-skill, 열기"
+  },
+  {
    "file": "09_skill_check.png",
    "title": "스킬 설치 확인",
    "shot": "한글작업 환경으로 연 새 세션 입력창에 / 를 입력해 목록이 펼쳐진 화면",

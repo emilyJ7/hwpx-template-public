@@ -165,6 +165,9 @@ const R = {
   },
   shot(s, d) {
     // 왼쪽: 단계 표시 + 할 일 목록(+ 요청 문장), 오른쪽: 화면 캡처(비율 유지해 상자 안에 맞춤)
+    const file = path.resolve(base, d.image);
+    const [pw, ph] = imgSize(file);
+    if (pw / ph > 2.2) return R.shotWide(s, d, file, pw, ph);
     const lw = 4.75, rx = M + lw + 0.35, bw = W - M - rx, by = 1.55, bh = 5.15;
     if (d.step) {
       s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x: M, y: 1.55, w: 1.5, h: 0.45, fill: { color: TEAL }, line: { color: TEAL }, rectRadius: 0.08 });
@@ -177,14 +180,34 @@ const R = {
       s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x: M, y: 6.7 - codeH, w: lw, h: codeH, fill: { color: INK }, line: { color: INK }, rectRadius: 0.08 });
       txt(s, d.prompt, { x: M + 0.2, y: 6.7 - codeH + 0.15, w: lw - 0.4, h: codeH - 0.3, fontSize: 12, color: "E6ECF4", valign: "middle" });
     }
-    const file = path.resolve(base, d.image);
-    const [pw, ph] = imgSize(file);
     let w = bw, h = bw * ph / pw;
     if (h > bh) { h = bh; w = bh * pw / ph; }
     const x = rx + (bw - w) / 2, y = by + (bh - h) / 2;
     s.addShape(pres.shapes.RECTANGLE, { x: x - 0.03, y: y - 0.03, w: w + 0.06, h: h + 0.06, fill: { color: LINE }, line: { color: LINE } });
     s.addImage({ path: file, x, y, w, h });
     if (d.foot) txt(s, d.foot, { x: rx, y: by + bh + 0.05, w: bw, h: 0.3, fontSize: 11, color: MUTED });
+  },
+  // 가로로 긴 캡처: 위쪽에 할 일(+ 요청 문장), 아래쪽에 그림을 본문 폭으로
+  shotWide(s, d, file, pw, ph) {
+    const fw = W - 2 * M, top = 1.5;
+    if (d.step) {
+      s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x: M, y: top, w: 1.5, h: 0.4, fill: { color: TEAL }, line: { color: TEAL }, rectRadius: 0.08 });
+      txt(s, d.step, { x: M, y: top, w: 1.5, h: 0.4, fontSize: 14, bold: true, color: WHITE, align: "center", valign: "middle" });
+    }
+    const tw = d.prompt ? fw * 0.55 : fw;
+    const items = d.items.map((t, i) => ({ text: t, options: { bullet: { type: "number" }, paraSpaceAfter: 4, breakLine: i < d.items.length - 1 } }));
+    txt(s, items, { x: M, y: top + 0.5, w: tw, h: 1.5, fontSize: 15, color: INK });
+    if (d.prompt) {
+      const px = M + tw + 0.3, pw2 = fw - tw - 0.3;
+      s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x: px, y: top, w: pw2, h: 2.0, fill: { color: INK }, line: { color: INK }, rectRadius: 0.08 });
+      txt(s, d.prompt, { x: px + 0.2, y: top + 0.15, w: pw2 - 0.4, h: 1.7, fontSize: 12, color: "E6ECF4", valign: "middle" });
+    }
+    const by = top + 2.2, bh = 6.8 - by;
+    let w = fw, h = fw * ph / pw;
+    if (h > bh) { h = bh; w = bh * pw / ph; }
+    const x = M + (fw - w) / 2, y = by;
+    s.addShape(pres.shapes.RECTANGLE, { x: x - 0.03, y: y - 0.03, w: w + 0.06, h: h + 0.06, fill: { color: LINE }, line: { color: LINE } });
+    s.addImage({ path: file, x, y, w, h });
   },
   closing(s, d) {
     txt(s, d.title, { x: 0.9, y: 0.7, w: 11.5, h: 0.9, fontSize: 36, bold: true, color: WHITE });

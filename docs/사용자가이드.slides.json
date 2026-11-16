@@ -293,11 +293,23 @@
      "image": "images/08_skill.png",
      "items": [
       "먼저 아래 문장으로 Python 패키지 설치(승인 후 허용)",
-      "프로필 → 「설정」 → 「사용자 지정」 → 「Skills」",
-      "「+ 추가」 → _설치파일\\…\\dist\\hwpx-template-skill.zip 선택",
-      "「내가 만듦」에 hwpx-template이 켜져 있으면 끝"
+      "왼쪽 아래 프로필 → 「설정」",
+      "「사용자 지정」 → 「Skills」",
+      "오른쪽 위 「+ 추가」"
      ],
      "prompt": "_설치파일의 requirements.txt로 필요한 Python 패키지를 설치하고 버전을 알려줘."
+    },
+    {
+     "type": "shot",
+     "title": "6단계. Skill 업로드",
+     "step": "6단계",
+     "image": "images/08b_upload.png",
+     "items": [
+      "「+ 추가」 → 「Skill 업로드」",
+      "「Skill 파일」 칸의 ↑ 클릭(또는 끌어다 놓기)",
+      "_설치파일 안 dist 폴더 → hwpx-template-skill → 「열기」",
+      "「업로드」 → 보안 스캔 후 「내 Skills」에 hwpx-template이 켜져 있으면 끝"
+     ]
     },
     {
      "type": "shot",
