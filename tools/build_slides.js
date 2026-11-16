@@ -1,6 +1,6 @@
 // 슬라이드 원본(JSON)으로 PPTX를 만든다.
 //   - docs/발표자료/slides.json → 발표자료.pptx(발표자 노트 포함) + 발표대본.md
-//   - docs/사용자가이드.slides.json → 사용자가이드.pptx
+//   - docs/사용자가이드.slides.json → 사용자가이드.pptx (화면 캡처는 docs/images/, 자리 그림은 tools/make_placeholders.js)
 // 출력 파일 이름은 JSON의 "output"(없으면 발표자료.pptx), 노트가 있는 장이 있으면 대본도 만든다.
 // PDF는 PowerPoint에서 「PDF로 저장」으로 만든다.
 // 사용: npm install pptxgenjs@3.12.0 → node tools/build_slides.js [원본.json]
@@ -34,6 +34,18 @@ pres.defineSlideMaster({
   slideNumber: { x: W - M - 0.6, y: 7.0, w: 0.6, h: 0.3, fontFace: FONT, fontSize: 10, color: MUTED, align: "right" },
 });
 pres.defineSlideMaster({ title: "DARK", background: { color: INK }, objects: [] });
+
+// PNG·JPEG 크기(가로, 세로 픽셀)
+function imgSize(file) {
+  const b = fs.readFileSync(file);
+  if (b.readUInt32BE(0) === 0x89504e47) return [b.readUInt32BE(16), b.readUInt32BE(20)];
+  for (let i = 2; i < b.length - 9;) {
+    if (b[i] !== 0xff) { i += 1; continue; }
+    if ([0xc0, 0xc1, 0xc2].includes(b[i + 1])) return [b.readUInt16BE(i + 7), b.readUInt16BE(i + 5)];
+    i += 2 + b.readUInt16BE(i + 2);
+  }
+  return [16, 10];
+}
 
 const txt = (s, text, o) => s.addText(text, Object.assign({ fontFace: FONT, isTextBox: true, margin: 0, valign: "top" }, o));
 const badge = (s, label, x, y, d, fill, color) => {
@@ -100,7 +112,8 @@ const R = {
   case1(s, d) {
     const lw = 4.3, gap = 0.4, rx = M + lw + gap, rw = W - M - rx, y = 1.6, h = 5.0;
     card(s, M, y, lw, h);
-    [["상황", d.situation], ["첨부", d.attach]].forEach(([k, v], i) => {
+    const [l1, l2] = d.labels || ["상황", "첨부"];
+    [[l1, d.situation], [l2, d.attach]].forEach(([k, v], i) => {
       const yy = y + 0.35 + i * 1.55;
       txt(s, k, { x: M + 0.35, y: yy, w: lw - 0.7, h: 0.4, fontSize: 15, bold: true, color: TEAL_D });
       txt(s, v, { x: M + 0.35, y: yy + 0.45, w: lw - 0.7, h: 1.0, fontSize: 16, color: INK });
@@ -149,6 +162,29 @@ const R = {
       txt(s, "팁", { x: x + 0.35, y: y + 3.95, w: 0.7, h: 0.45, fontSize: 14, bold: true, color: INK, align: "center", valign: "middle" });
       txt(s, tip, { x: x + 1.2, y: y + 3.95, w: cw - 1.55, h: 0.8, fontSize: 15, color: INK });
     });
+  },
+  shot(s, d) {
+    // 왼쪽: 단계 표시 + 할 일 목록(+ 요청 문장), 오른쪽: 화면 캡처(비율 유지해 상자 안에 맞춤)
+    const lw = 4.75, rx = M + lw + 0.35, bw = W - M - rx, by = 1.55, bh = 5.15;
+    if (d.step) {
+      s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x: M, y: 1.55, w: 1.5, h: 0.45, fill: { color: TEAL }, line: { color: TEAL }, rectRadius: 0.08 });
+      txt(s, d.step, { x: M, y: 1.55, w: 1.5, h: 0.45, fontSize: 14, bold: true, color: WHITE, align: "center", valign: "middle" });
+    }
+    const codeH = d.prompt ? 1.75 : 0;
+    const items = d.items.map((t, i) => ({ text: t, options: { bullet: { type: "number" }, paraSpaceAfter: 8, breakLine: i < d.items.length - 1 } }));
+    txt(s, items, { x: M, y: 2.2, w: lw, h: 4.5 - codeH, fontSize: 16, color: INK });
+    if (d.prompt) {
+      s.addShape(pres.shapes.ROUNDED_RECTANGLE, { x: M, y: 6.7 - codeH, w: lw, h: codeH, fill: { color: INK }, line: { color: INK }, rectRadius: 0.08 });
+      txt(s, d.prompt, { x: M + 0.2, y: 6.7 - codeH + 0.15, w: lw - 0.4, h: codeH - 0.3, fontSize: 12, color: "E6ECF4", valign: "middle" });
+    }
+    const file = path.resolve(base, d.image);
+    const [pw, ph] = imgSize(file);
+    let w = bw, h = bw * ph / pw;
+    if (h > bh) { h = bh; w = bh * pw / ph; }
+    const x = rx + (bw - w) / 2, y = by + (bh - h) / 2;
+    s.addShape(pres.shapes.RECTANGLE, { x: x - 0.03, y: y - 0.03, w: w + 0.06, h: h + 0.06, fill: { color: LINE }, line: { color: LINE } });
+    s.addImage({ path: file, x, y, w, h });
+    if (d.foot) txt(s, d.foot, { x: rx, y: by + bh + 0.05, w: bw, h: 0.3, fontSize: 11, color: MUTED });
   },
   closing(s, d) {
     txt(s, d.title, { x: 0.9, y: 0.7, w: 11.5, h: 0.9, fontSize: 36, bold: true, color: WHITE });

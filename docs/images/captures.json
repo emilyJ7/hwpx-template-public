@@ -1,0 +1,17 @@
+{
+ "note": "사용자 가이드에 넣는 화면 캡처 목록. 같은 파일 이름으로 실제 캡처를 넣으면 자리 그림 대신 들어감(node tools/make_placeholders.js 는 실제 캡처를 덮어쓰지 않음)",
+ "items": [
+  {"file": "01_download.png", "title": "Claude 데스크톱 앱 내려받기", "shot": "웹 브라우저에서 claude.ai/download 페이지를 연 화면", "mark": "「Windows용 다운로드(Download for Windows)」 버튼"},
+  {"file": "02_installer.png", "title": "설치 파일 실행", "shot": "다운로드 폴더의 Claude 설치 파일(.exe)과 설치가 진행되는 창", "mark": "설치 파일 이름, 진행 막대"},
+  {"file": "03_login.png", "title": "앱 첫 실행·로그인", "shot": "설치 후 처음 열린 Claude 앱의 로그인 화면", "mark": "로그인 버튼(구글 계정 또는 이메일)"},
+  {"file": "04_code_tab.png", "title": "Code 탭 열기", "shot": "로그인 후 앱 첫 화면, 왼쪽 사이드바가 보이게", "mark": "사이드바 위쪽의 「Code」 탭"},
+  {"file": "05_python.png", "title": "Python 설치(처음 한 번)", "shot": "python.org에서 받은 Python 설치 프로그램의 첫 화면", "mark": "아래쪽 「Add python.exe to PATH」 체크 상자, 「Install Now」"},
+  {"file": "06_github_zip.png", "title": "스킬 파일 내려받기", "shot": "github.com/emilyJ7/hwpx-template-public 저장소 화면에서 초록색 「Code」 버튼을 누른 상태", "mark": "「Download ZIP」 메뉴"},
+  {"file": "07_open_folder.png", "title": "작업 폴더 열기", "shot": "Code 탭 입력창 아래 줄에서 폴더 선택을 누른 상태", "mark": "환경 「Local」, 폴더 선택 「Open folder…」, 권한 모드 선택"},
+  {"file": "08_setup_request.png", "title": "설치를 Claude에게 맡기기", "shot": "입력창에 설치 요청 문장을 입력한 화면", "mark": "입력한 요청 문장, 보내기 버튼"},
+  {"file": "09_permission.png", "title": "명령 실행 승인", "shot": "Claude가 PowerShell 명령을 실행하려고 승인을 묻는 창", "mark": "실행할 명령, 허용 버튼"},
+  {"file": "10_skill_check.png", "title": "스킬 설치 확인", "shot": "새 세션 입력창에 / 를 입력해 목록이 펼쳐진 화면", "mark": "목록의 「hwpx-template」"},
+  {"file": "11_attach.png", "title": "양식·자료 넣고 요청하기", "shot": "+ 버튼으로 양식 hwpx와 원고 파일을 첨부하고 요청 문장을 입력한 화면", "mark": "+ 버튼, 첨부된 파일 2개, 요청 문장"},
+  {"file": "12_result.png", "title": "결과 확인", "shot": "Claude가 완료 보고를 한 화면과, 만든 hwpx를 한글에서 연 화면(나란히 또는 한 장씩)", "mark": "결과 파일 경로, 한글에서 열린 문서"}
+ ]
+}
