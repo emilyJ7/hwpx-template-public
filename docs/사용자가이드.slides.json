@@ -142,7 +142,7 @@
       ],
       [
        "스킬 넣기",
-       "「스킬 폴더에 복사해서 설치해줘」"
+       "설정 → Skills → 「+ 추가」로 zip 올리기"
       ],
       [
        "설치 확인",
@@ -279,23 +279,25 @@
      "step": "5단계",
      "image": "images/07_folders.png",
      "items": [
-      "Claude가 GitHub 저장소를 _설치파일에 내려받음",
-      "양식\\, 작업\\2026-11_시험작성\\원고·자료·결과 생성",
+      "같은 세션 입력창에 아래 문장을 붙여 넣고 Enter",
+      "승인 창은 위치가 문서\\한글작업 안인지 확인 후 허용",
+      "완료 후 탐색기에서 확인: _설치파일, 양식\\양식예시.hwpx, 작업\\2026-11_시험작성\\원고·자료·결과",
       "다음 작업부터: 「2026-12_월간보고를 같은 구조로 만들어줘」"
      ],
-     "prompt": "https://github.com/emilyJ7/hwpx-template-public 저장소를 zip으로 내려받아 _설치파일 폴더에 풀어줘. 이 폴더를 양식\\, 작업\\2026-11_시험작성\\원고·자료·결과 구조로 정리하고(양식예시.hwpx, sample.md 복사) 만드는 법을 사용법.txt로 남겨줘."
+     "prompt": "https://github.com/emilyJ7/hwpx-template-public 저장소를 zip으로 내려받아 _설치파일 폴더에 풀어줘. 이 폴더를 양식\\(양식예시.hwpx 복사)과 작업\\2026-11_시험작성\\원고·자료·결과(원고에 sample.md 복사)로 나눠 정리해줘."
     },
     {
      "type": "shot",
-     "title": "6단계. 스킬을 Claude Code 앱에 넣기",
+     "title": "6단계. 스킬을 Claude 앱에 넣기",
      "step": "6단계",
      "image": "images/08_skill.png",
      "items": [
-      "같은 세션에서 이어서 요청",
-      "복사·pip install 승인 창에서 경로 확인 후 허용",
-      "「설치 완료」, SKILL.md 확인 보고가 나오면 끝"
+      "먼저 아래 문장으로 Python 패키지 설치(승인 후 허용)",
+      "프로필 → 「설정」 → 「사용자 지정」 → 「Skills」",
+      "「+ 추가」 → _설치파일\\…\\dist\\hwpx-template-skill.zip 선택",
+      "「내가 만듦」에 hwpx-template이 켜져 있으면 끝"
      ],
-     "prompt": "_설치파일의 skills\\hwpx-template을 C:\\Users\\<내 사용자>\\.claude\\skills\\hwpx-template에 복사해서 설치하고, requirements.txt의 패키지도 설치해줘. SKILL.md 위치와 패키지 버전을 알려줘."
+     "prompt": "_설치파일의 requirements.txt로 필요한 Python 패키지를 설치하고 버전을 알려줘."
     },
     {
      "type": "shot",
