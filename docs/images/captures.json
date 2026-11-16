@@ -14,10 +14,16 @@
    "mark": "Claude Setup 파일, 「열기」"
   },
   {
+   "file": "03_launch.png",
+   "title": "앱 실행",
+   "shot": "작업 표시줄 검색에 claude를 입력해 Claude 앱이 나온 화면",
+   "mark": "검색창, 「Claude 앱」, 「열기」"
+  },
+  {
    "file": "03_login.png",
-   "title": "앱 첫 실행·로그인",
-   "shot": "설치 후 처음 열린 Claude 앱의 로그인 화면",
-   "mark": "로그인 버튼(구글 계정 또는 이메일)"
+   "title": "구글 계정으로 로그인",
+   "shot": "앱을 처음 열었을 때 나오는 로그인 화면",
+   "mark": "「Google로 계속하기」 버튼"
   },
   {
    "file": "04_code_tab.png",

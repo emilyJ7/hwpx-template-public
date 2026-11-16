@@ -33,7 +33,7 @@ body{margin:0;width:1600px;height:1000px;background:#EEF3F6;font-family:"NanumGo
 .k{font-size:30px;font-weight:800;color:#1F776D;margin-top:22px}
 .v{font-size:38px;color:#1B2A41;margin-top:8px;line-height:1.35}
 .p{margin-top:auto;font-size:28px;color:#5B6B7C;font-family:"NanumGothicCoding",monospace}
-</style><div class="f"><span class="n">화면 캡처 자리 ${String(i + 1).padStart(2, "0")}</span>
+</style><div class="f"><span class="n">화면 캡처 자리 ${it.file.split("_")[0]}</span>
 <div class="t">${esc(it.title)}</div>
 <div class="k">찍을 화면</div><div class="v">${esc(it.shot)}</div>
 <div class="k">표시할 곳(빨간 상자·화살표)</div><div class="v">${esc(it.mark)}</div>
