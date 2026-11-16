@@ -56,6 +56,12 @@
    "mark": "Skill 업로드, 업로드 칸, hwpx-template-skill, 열기"
   },
   {
+   "file": "08c_done.png",
+   "title": "업로드 완료",
+   "shot": "파일·미리보기가 보이는 Skill 업로드 화면과 업로드 후 「내가 만듦」 목록",
+   "mark": "업로드 버튼, 목록의 hwpx-template"
+  },
+  {
    "file": "09_skill_check.png",
    "title": "스킬 설치 확인",
    "shot": "한글작업 환경으로 연 새 세션 입력창에 / 를 입력해 목록이 펼쳐진 화면",

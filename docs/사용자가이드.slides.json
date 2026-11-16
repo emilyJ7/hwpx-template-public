@@ -307,8 +307,18 @@
      "items": [
       "「+ 추가」 → 「Skill 업로드」",
       "「Skill 파일」 칸의 ↑ 클릭(또는 끌어다 놓기)",
-      "_설치파일 안 dist 폴더 → hwpx-template-skill → 「열기」",
-      "「업로드」 → 보안 스캔 후 「내 Skills」에 hwpx-template이 켜져 있으면 끝"
+      "_설치파일 안 dist 폴더 → hwpx-template-skill → 「열기」"
+     ]
+    },
+    {
+     "type": "shot",
+     "title": "6단계. 업로드 완료",
+     "step": "6단계",
+     "image": "images/08c_done.png",
+     "items": [
+      "「Skill 파일」에 hwpx-template-skill.zip, 「미리보기」에 설명이 보이면 「업로드」",
+      "보안 스캔이 함께 실행됨",
+      "「내가 만듦」 목록에 hwpx-template(파일 및 문서)이 보이면 끝"
      ]
     },
     {
