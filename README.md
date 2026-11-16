@@ -6,7 +6,7 @@
 
 > "C:\…\보고양식.hwpx 양식에 맞게 이 내용으로 한글 파일 만들어줘"
 
-- **사용자 가이드(Claude 데스크톱 앱 설치·사용 화면 안내, 케이스별 프롬프트 예시)**: [docs/사용자가이드.md](docs/사용자가이드.md) · 슬라이드판 `docs/사용자가이드.pptx`(42장) · 한글판 `docs/사용자가이드.hwpx` · PDF `docs/사용자가이드.pdf`
+- **사용자 가이드(Claude 데스크톱 앱 설치·사용 화면 안내, 케이스별 프롬프트 예시)**: [docs/사용자가이드.md](docs/사용자가이드.md) · 슬라이드판 `docs/사용자가이드.pptx`(44장) · 한글판 `docs/사용자가이드.hwpx` · PDF `docs/사용자가이드.pdf`
 - **발표자료(15장)**: `docs/발표자료/발표자료.pptx` · PDF `docs/발표자료/발표자료.pdf` · 장별 대본 [docs/발표자료/발표대본.md](docs/발표자료/발표대본.md)
 - 화면 캡처: 목록과 넣는 법은 [docs/캡처목록.md](docs/캡처목록.md). `docs/images/`에 같은 이름으로 캡처를 넣고 가이드를 다시 만들면 「화면 캡처 자리」 그림 대신 들어갑니다(자리 그림 다시 그리기: `node tools/make_placeholders.js`)
 - PPTX 다시 만들기: 원본 JSON(`docs/발표자료/slides.json`, `docs/사용자가이드.slides.json`)을 고친 뒤 `npm install pptxgenjs@3.12.0` → `node tools/build_slides.js [원본.json]`. PDF는 PowerPoint에서 PDF로 저장. 사용자 가이드 PDF는 한글에서 사용자가이드.hwpx를 「PDF로 저장」하거나, 한글이 없으면 `npm install marked@12.0.2` → `node tools/build_guide_pdf.js`
@@ -14,7 +14,7 @@
 - 원고 문법 상세: [skills/hwpx-template/USAGE.md](skills/hwpx-template/USAGE.md)
 
 ## 변경 이력
-- 0.2.3: 사용자 가이드에 Claude 데스크톱 앱(Windows) 설치·사용 6단계와 화면 캡처 자리 12곳, Code 탭 프롬프트 예시 6가지 추가(md·pptx 42장·hwpx·pdf), 캡처 목록(`docs/캡처목록.md`)과 빌드 도구(`tools/make_placeholders.js`, `tools/build_guide_pdf.js`) 추가
+- 0.2.3: 사용자 가이드에 Claude 데스크톱 앱(Windows) 설치~첫 문서 8단계 추가 — 앱 설치·로그인, Code 탭, 작업 폴더 환경, Python 설치·스킬 내려받기·작업 폴더 정리는 Code 탭에서 Claude에게 요청, 스킬은 설정 → Skills → Skill 업로드. 실제 화면 캡처 11장, Code 탭 프롬프트 예시 6가지(md·pptx 44장·hwpx·pdf). 캡처 목록(`docs/캡처목록.md`)과 빌드 도구(`tools/make_placeholders.js`, `tools/build_guide_pdf.js`) 추가
 - 0.2.2: 다른 AI 도구(Codex·Cursor·Gemini CLI·GitHub Copilot) 설치 안내와 `setup_windows.ps1 -Agents` 추가, SKILL.md에 license·compatibility 추가, setup_windows.ps1을 Windows PowerShell 5.1에서 열리도록 수정(UTF-8 BOM)
 - 0.2.1: MIT 라이선스로 공개, 공개용 사용자 가이드·발표자료(PPTX)·견본 양식과 결과 예시 추가
 - 0.2.0: 표지·문서 정보·목차가 있는 양식 지원(앞쪽 페이지 유지, 목차 자동 생성·쪽 번호 자동), 번호 제목(1. / 2.1. / 가.) 양식 자동 인식, 표지 글 바꾸기(replace)·표 비우기/채우기, 사용자 가이드
