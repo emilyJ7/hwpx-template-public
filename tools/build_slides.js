@@ -82,8 +82,8 @@ const R = {
     foot(s, d.foot);
   },
   cards(s, d) {
-    const n = d.items.length, cols = 3, rows = Math.ceil(n / cols), gap = 0.35;
-    const cw = (W - 2 * M - gap * (cols - 1)) / cols, ch = rows === 2 ? 2.3 : 3.5, y0 = 1.65;
+    const n = d.items.length, cols = n > 6 ? 4 : 3, rows = Math.ceil(n / cols), gap = 0.35;
+    const cw = (W - 2 * M - gap * (cols - 1)) / cols, ch = rows === 2 ? (d.foot ? 2.0 : 2.3) : 3.5, y0 = 1.65;
     d.items.forEach(([t, desc], i) => {
       const r = Math.floor(i / cols), c = i % cols;
       const inRow = Math.min(cols, n - r * cols);
