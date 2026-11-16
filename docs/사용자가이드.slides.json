@@ -1,6 +1,6 @@
 {
  "title": "hwpx-template 사용자 가이드",
- "version": "v0.2.2 · 2026. 11.",
+ "version": "v0.2.3 · 2026. 11.",
  "output": "사용자가이드.pptx",
  "sections": [
   {
@@ -114,7 +114,254 @@
    ]
   },
   {
-   "title": "설치하기",
+   "title": "데스크톱 앱으로 시작하기",
+   "slides": [
+    {
+     "type": "cards",
+     "title": "Claude 데스크톱 앱(Windows), 8단계로 시작",
+     "items": [
+      [
+       "앱 설치",
+       "claude.com/download에서 받아 설치·로그인"
+      ],
+      [
+       "Code 탭",
+       "사이드바 맨 위 </> 아이콘(유료 요금제)"
+      ],
+      [
+       "작업 폴더",
+       "「+ 새 환경」 → 폴더 추가 → 한글작업"
+      ],
+      [
+       "Python",
+       "「Python 설치해줘」 — Claude가 winget으로"
+      ],
+      [
+       "스킬·폴더",
+       "「저장소 받아서 작업 폴더 만들어줘」"
+      ],
+      [
+       "스킬 넣기",
+       "설정 → Skills → 「+ 추가」로 zip 올리기"
+      ],
+      [
+       "설치 확인",
+       "새 세션에서 / → hwpx-template"
+      ],
+      [
+       "첫 문서",
+       "「이 양식으로 한글 파일 만들어줘」"
+      ]
+     ],
+     "foot": "3단계부터는 GitHub에 들어가지 않고 Code 탭에서 Claude에게 말로 시킵니다(바이브 코딩)"
+    },
+    {
+     "type": "table",
+     "title": "준비물",
+     "rowH": 0.8,
+     "colW": [
+      3.2
+     ],
+     "head": [
+      "항목",
+      "내용"
+     ],
+     "rows": [
+      [
+       "PC",
+       "Windows 10·11(64비트). ARM 프로세서 PC는 ARM64용 설치 파일"
+      ],
+      [
+       "Claude 계정",
+       "Code 탭은 유료 요금제(Pro·Max·Team·Enterprise)에서 사용"
+      ],
+      [
+       "한글",
+       "한글 2018 이상(없어도 문서는 만들어짐, 한글 검증 단계만 빠짐)"
+      ],
+      [
+       "Python",
+       "4단계에서 Claude가 설치(따로 받을 필요 없음)"
+      ],
+      [
+       "인터넷",
+       "앱 내려받기, Claude가 Python·스킬 내려받기"
+      ]
+     ]
+    },
+    {
+     "type": "shot",
+     "title": "1단계. 데스크톱 앱 내려받기",
+     "step": "1단계",
+     "image": "images/01_download.png",
+     "items": [
+      "웹 브라우저에서 claude.com/download 접속",
+      "「Windows용 다운로드」 클릭",
+      "ARM 프로세서 PC는 「Windows(arm64)」, Microsoft Store에서 받아도 됨"
+     ]
+    },
+    {
+     "type": "shot",
+     "title": "1단계. 설치 파일 열기",
+     "step": "1단계",
+     "image": "images/02_installer.png",
+     "items": [
+      "파일 탐색기 「다운로드」 폴더 열기",
+      "Claude Setup 파일 더블클릭(또는 오른쪽 클릭 → 「열기」)",
+      "「관리자 권한으로 실행」은 필요 없음",
+      "「Windows의 PC 보호」 창이 뜨면 「추가 정보 → 실행」",
+      "설치가 끝나면 앱이 저절로 열림"
+     ]
+    },
+    {
+     "type": "shot",
+     "title": "1단계. 앱 실행",
+     "step": "1단계",
+     "image": "images/03_launch.png",
+     "items": [
+      "설치가 끝나면 앱이 저절로 열림",
+      "안 열렸거나 다시 열 때: 작업 표시줄 검색에 claude 입력",
+      "「Claude 앱」 → 「열기」"
+     ]
+    },
+    {
+     "type": "shot",
+     "title": "1단계. 구글 계정으로 로그인",
+     "step": "1단계",
+     "image": "images/03_login.png",
+     "items": [
+      "앱 첫 화면에서 「Google로 계속하기」",
+      "브라우저 「계정을 선택하세요」에서 쓸 계정 선택",
+      "「Claude에 다시 로그인하는 중입니다」에서 「계속」",
+      "앱으로 돌아오면 로그인 끝(구글 계정이 아니면 「이메일로 계속하기」)"
+     ]
+    },
+    {
+     "type": "shot",
+     "title": "2단계. Code 탭 열기",
+     "step": "2단계",
+     "image": "images/04_code_tab.png",
+     "items": [
+      "사이드바 맨 위 오른쪽 아이콘 2개 중 </> 아이콘이 Code 탭",
+      "왼쪽 말풍선 아이콘은 채팅 탭",
+      "Code 탭에서 파일 읽기·명령 실행·한글 검증까지 함",
+      "요금제 안내가 뜨면 유료 요금제로 바꾼 뒤 앱 다시 시작"
+     ]
+    },
+    {
+     "type": "shot",
+     "title": "3단계. 작업 폴더 환경 만들기",
+     "step": "3단계",
+     "image": "images/05_open_folder.png",
+     "items": [
+      "「+ 새로 만들기」 → 환경 표시(「자동」) → 「환경 선택」 → 「+ 새 환경」",
+      "「로컬」 탭, 이름 한글작업, 실행 위치 「이 컴퓨터」",
+      "폴더 「+ 추가」 → 「선택…」",
+      "「문서」 → 「새 폴더」 한글작업 → 「폴더 선택」",
+      "폴더 경로 확인 후 환경 저장, 다음부터는 「환경 선택」에서 한글작업"
+     ]
+    },
+    {
+     "type": "case1",
+     "labels": [
+      "할 일",
+      "승인·결과"
+     ],
+     "title": "4단계. Python 설치(Claude에게 시키기)",
+     "situation": "한글작업 환경의 세션 입력창에 오른쪽 문장을 그대로 붙여 넣고 Enter",
+     "attach": "명령 실행 승인 창이 뜨면 확인 후 허용 → Python 버전이 보고되면 끝",
+     "prompt": "이 PC에 Python이 있는지 확인하고, 없으면 winget으로 Python 3.12를 설치해줘.\n다 되면 설치된 버전을 알려줘.",
+     "tip": "python을 못 찾으면 앱을 껐다 켜고 「Python 설치 확인 다시 해줘」"
+    },
+    {
+     "type": "shot",
+     "title": "5단계. 스킬 내려받고 작업 폴더 만들기",
+     "step": "5단계",
+     "image": "images/07_folders.png",
+     "items": [
+      "같은 세션 입력창에 아래 문장을 붙여 넣고 Enter",
+      "승인 창은 위치가 문서\\한글작업 안인지 확인 후 허용",
+      "완료 후 탐색기에서 확인: _설치파일, 양식\\양식예시.hwpx, 작업\\2026-11_시험작성\\원고·자료·결과",
+      "다음 작업부터: 「2026-12_월간보고를 같은 구조로 만들어줘」"
+     ],
+     "prompt": "https://github.com/emilyJ7/hwpx-template-public 저장소를 zip으로 내려받아 _설치파일 폴더에 풀어줘. 이 폴더를 양식\\(양식예시.hwpx 복사)과 작업\\2026-11_시험작성\\원고·자료·결과(원고에 sample.md 복사)로 나눠 정리해줘."
+    },
+    {
+     "type": "shot",
+     "title": "6단계. 스킬을 Claude 앱에 넣기",
+     "step": "6단계",
+     "image": "images/08_skill.png",
+     "items": [
+      "먼저 아래 문장으로 Python 패키지 설치(승인 후 허용)",
+      "왼쪽 아래 프로필 → 「설정」",
+      "「사용자 지정」 → 「Skills」",
+      "오른쪽 위 「+ 추가」"
+     ],
+     "prompt": "_설치파일의 requirements.txt로 필요한 Python 패키지를 설치하고 버전을 알려줘."
+    },
+    {
+     "type": "shot",
+     "title": "6단계. Skill 업로드",
+     "step": "6단계",
+     "image": "images/08b_upload.png",
+     "items": [
+      "「+ 추가」 → 「Skill 업로드」",
+      "「Skill 파일」 칸의 ↑ 클릭(또는 끌어다 놓기)",
+      "_설치파일 안 dist 폴더 → hwpx-template-skill → 「열기」"
+     ]
+    },
+    {
+     "type": "shot",
+     "title": "6단계. 업로드 완료",
+     "step": "6단계",
+     "image": "images/08c_done.png",
+     "items": [
+      "「Skill 파일」에 hwpx-template-skill.zip, 「미리보기」에 설명이 보이면 「업로드」",
+      "보안 스캔이 함께 실행됨",
+      "「내가 만듦」 목록에 hwpx-template(파일 및 문서)이 보이면 끝"
+     ]
+    },
+    {
+     "type": "case1",
+     "labels": [
+      "할 일",
+      "확인"
+     ],
+     "title": "7단계. 스킬 설치 확인",
+     "situation": "「+ 새로 만들기」로 새 세션 → 「환경 선택」에서 한글작업",
+     "attach": "목록에 anthropic-skills:hwpx-template이 보이면 성공(설정의 Skills로 올린 스킬 이름)",
+     "prompt": "/hwpx\n\n→ 목록에서 anthropic-skills:hwpx-template 선택\n→ 입력창 맨 앞에 /anthropic-skills:hwpx-template 이 들어감",
+     "tip": "설치 전에 열려 있던 세션에는 스킬이 반영되지 않음",
+     "promptLabel": "입력창에 이렇게"
+    },
+    {
+     "type": "shot",
+     "title": "8단계. 양식·원고로 요청하기",
+     "step": "8단계",
+     "image": "images/10_attach.png",
+     "items": [
+      "한글작업 환경 세션에서 /hwpx → anthropic-skills:hwpx-template 선택",
+      "이어서 아래 요청 문장 입력 → Enter"
+     ],
+     "prompt": "/anthropic-skills:hwpx-template 양식\\양식예시.hwpx 양식에 맞게 작업\\2026-11_시험작성\\원고\\sample.md를 한글 파일로 만들어 같은 작업의 결과 폴더에 시험보고.hwpx로 저장해줘. 다 만들면 한글로 열어 검증하고 쪽 수를 알려줘."
+    },
+    {
+     "type": "case1",
+     "labels": [
+      "진행",
+      "확인"
+     ],
+     "title": "8단계. 결과 확인",
+     "situation": "양식 분석 → 원고 정리 → hwpx 생성 → 한글로 열어 검증 순서로 진행, 승인 창은 확인 후 허용",
+     "attach": "「완료」와 함께 결과 파일 경로·쪽 수·검증 결과가 보고되면 끝",
+     "prompt": "문서\\한글작업\\작업\\2026-11_시험작성\\결과\\시험보고.hwpx\n\n→ 탐색기에서 더블클릭해 한글로 열기\n→ 제목 상자·□·○ 글머리·표·※ 박스가 양식과 같은지 확인",
+     "tip": "고칠 점은 같은 세션에서 이어서 요청(예: 「표 첫 열을 더 넓게 해서 다시 만들어줘」)",
+     "promptLabel": "결과 파일 확인"
+    }
+   ]
+  },
+  {
+   "title": "다른 설치 방법",
    "slides": [
     {
      "type": "steps",
@@ -141,7 +388,7 @@
     },
     {
      "type": "code",
-     "title": "Claude Code (데스크톱 앱 Code 탭·터미널)",
+     "title": "Claude Code (플러그인·터미널)",
      "blocks": [
       [
        "플러그인으로 설치",
@@ -297,6 +544,83 @@
    ]
   },
   {
+   "title": "데스크톱 앱 프롬프트 예시",
+   "slides": [
+    {
+     "type": "case1",
+     "labels": [
+      "상황",
+      "폴더"
+     ],
+     "title": "Code 탭 1. 설치·환경 점검",
+     "situation": "설치가 잘 됐는지, 한글 검증까지 되는지 모를 때",
+     "attach": "아무 폴더",
+     "prompt": "hwpx-template 스킬이 설치돼 있는지, Python과 lxml이 있는지, 한글로 열어 검증할 수 있는 상태인지 점검해줘.\n없는 것이 있으면 설치 방법을 단계별로 알려줘.",
+     "tip": "다시 설치: 「setup_windows.ps1을 -CopySkill -RegisterSecurityModule 옵션으로 실행해줘」"
+    },
+    {
+     "type": "case1",
+     "labels": [
+      "상황",
+      "폴더"
+     ],
+     "title": "Code 탭 2. 양식부터 확인하기",
+     "situation": "새 양식을 처음 쓸 때, 어떤 서식이 읽히는지 먼저 보고 싶을 때",
+     "attach": "양식\\보고양식.hwpx",
+     "prompt": "/anthropic-skills:hwpx-template 양식\\보고양식.hwpx 양식을 분석만 해줘.\n제목 상자, □·○·- 글머리, ※ 박스, 표, 붙임 상자 중 무엇이 인식됐고 무엇이 없는지 표로 정리해줘. 아직 문서는 만들지 마.",
+     "tip": "빠진 서식은 양식에 예시 문단을 넣어 다시 주면 읽음"
+    },
+    {
+     "type": "case1",
+     "labels": [
+      "상황",
+      "폴더"
+     ],
+     "title": "Code 탭 3. 폴더 안 파일로 바로 만들기",
+     "situation": "첨부 없이 PC 폴더의 파일 경로로 요청할 때",
+     "attach": "양식\\보고양식.hwpx\n원고\\11월_추진현황.md\n결과\\(빈 폴더)",
+     "prompt": "/anthropic-skills:hwpx-template 양식\\보고양식.hwpx 양식으로 원고\\11월_추진현황.md를 한글 파일로 만들어 결과 폴더에 같은 이름(.hwpx)으로 저장해줘.\n한글로 열어 검증하고 쪽 수와 표 개수를 알려줘.",
+     "tip": "여러 개도 한 번에: 「원고 폴더의 docx 3개를 각각 양식으로 바꿔 결과 폴더에 저장, 문장은 고치지 마」"
+    },
+    {
+     "type": "case1",
+     "labels": [
+      "상황",
+      "폴더"
+     ],
+     "title": "Code 탭 4. 여러 자료를 모아 보고서로",
+     "situation": "PDF·엑셀·docx 자료를 읽고 정해진 구성으로 보고서를 쓸 때",
+     "attach": "자료\\(PDF·xlsx·docx)\n양식\\보고양식.hwpx",
+     "prompt": "자료 폴더의 파일을 모두 읽고 국장 보고용 2쪽 보고서를 양식\\보고양식.hwpx로 만들어줘.\n구성: □ 추진 배경 □ 현황 □ 문제점 □ 개선 방안 □ 향후 계획\n개조식(~함, ~필요), 핵심 수치는 표 1개, 출처는 각주, 상세 비교는 붙임1. 결과\\개선방안_보고.hwpx로 저장하고 검증해줘.",
+     "tip": "「수치는 원자료 그대로」 「자료에 없는 내용은 넣지 마」를 덧붙이면 안전"
+    },
+    {
+     "type": "case1",
+     "labels": [
+      "상황",
+      "폴더"
+     ],
+     "title": "Code 탭 5. 매달 같은 양식으로 반복",
+     "situation": "월간·주간 보고처럼 같은 모양의 문서를 되풀이할 때",
+     "attach": "결과\\10월_월간보고.hwpx\n원고\\11월_메모.md",
+     "prompt": "지난달 결과\\10월_월간보고.hwpx와 같은 양식·구성으로, 원고\\11월_메모.md 내용을 넣어 결과\\11월_월간보고.hwpx를 만들어줘. 날짜는 2026. 11. 30.으로 바꿔줘.\n\n이번 요청 문장과 양식 경로는 다음 달에도 쓰게 요청문.md로 저장해줘.",
+     "tip": "잘 된 요청 문장을 파일로 모아 두면 다음부터 복사만 하면 됨"
+    },
+    {
+     "type": "case1",
+     "labels": [
+      "상황",
+      "폴더"
+     ],
+     "title": "Code 탭 6. 결과 다듬기·비교하기",
+     "situation": "만든 결과를 한글에서 보고 고치고 싶을 때",
+     "attach": "결과\\주간보고.hwpx",
+     "prompt": "결과\\주간보고.hwpx에서 표 첫 열을 25%로 넓히고, 2쪽 안에 들어가게 문장을 줄여서 다시 만들어줘. 고친 뒤 한글로 열어 2쪽인지 확인해줘.\n\n한글로 연 결과를 쪽별 그림(PNG)으로 저장해서 양식과 비교하고, 다른 점은 고쳐줘.",
+     "tip": "승인을 자주 묻는 게 번거로우면 권한 모드를 Accept edits로(그 밖의 명령은 계속 물음)"
+    }
+   ]
+  },
+  {
    "title": "요령과 FAQ",
    "slides": [
     {
@@ -328,7 +652,7 @@
     {
      "type": "table",
      "title": "자주 묻는 질문",
-     "rowH": 0.72,
+     "rowH": 0.6,
      "colW": [
       3.6
      ],
@@ -339,23 +663,27 @@
      "rows": [
       [
        "스킬이 안 보여요",
-       "설치 후 새 대화를 열어야 반영. claude.ai는 설정 → 기능 → 스킬에서 켜져 있는지 확인"
+       "설치 후 새 대화(세션)를 열어야 반영. claude.ai는 설정 → 기능 → 스킬에서 켜져 있는지 확인"
       ],
       [
-       "업로드 시 「nested zip」 오류",
-       "zip 안에 zip이 있음. 받은 zip 파일을 그대로 업로드"
+       "Code 탭에 요금제 안내가 떠요",
+       "Code 탭은 유료 요금제에서 사용. 요금제를 바꾼 뒤 앱 다시 시작"
       ],
       [
-       "「SKILL.md가 필요」 오류",
-       "폴더를 다시 압축하지 말고 배포된 zip을 그대로 사용"
+       "「python을 찾을 수 없음」",
+       "Python 설치 때 「Add python.exe to PATH」 미체크. 다시 설치하며 체크 후 앱 다시 시작"
+      ],
+      [
+       "Git 설치를 요구해요",
+       "git-scm.com에서 Git for Windows 설치 후 앱 다시 시작"
       ],
       [
        "서식이 양식과 조금 달라요",
        "양식에 그 요소의 예시가 없는 경우. 예시가 있는 문서를 쓰거나 원하는 모양을 말로 요청"
       ],
       [
-       "한글에서 안 열려요",
-       "결과 파일명·양식을 알려 재생성 요청(Claude Code는 한글 검증으로 미리 확인)"
+       "한글 창이 접근 허용을 계속 물어요",
+       "「모두 허용」 클릭, 또는 setup_windows.ps1 -RegisterSecurityModule로 등록"
       ],
       [
        "목차 쪽 번호가 비어요",
